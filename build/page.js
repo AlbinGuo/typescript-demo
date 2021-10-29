@@ -1,36 +1,18 @@
-define("moduleImport/Components", ["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Footer = exports.Header = void 0;
-    var Header = (function () {
-        function Header() {
-            var ele = document.createElement('div');
-            ele.innerText = '使用AMD规范引入module，Header';
-            document.body.appendChild(ele);
-        }
-        return Header;
-    }());
-    exports.Header = Header;
-    var Footer = (function () {
-        function Footer() {
-            var ele = document.createElement('div');
-            ele.innerText = '===底部区域===';
-            document.body.appendChild(ele);
-        }
-        return Footer;
-    }());
-    exports.Footer = Footer;
+var Student = (function () {
+    function Student(info) {
+        this.info = info;
+    }
+    Student.prototype.getInfo = function (key) {
+        return this.info[key];
+    };
+    return Student;
+}());
+var stu = new Student({
+    name: '赵子龙',
+    age: 56,
+    gender: '男',
+    marriage: false
 });
-define("moduleImport/page", ["require", "exports", "moduleImport/Components"], function (require, exports, Components_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Page = (function () {
-        function Page() {
-            new Components_1.Header();
-            new Components_1.Footer();
-        }
-        return Page;
-    }());
-    exports.default = Page;
-});
+var op = stu.getInfo('marriage');
+console.log(op);
 //# sourceMappingURL=page.js.map

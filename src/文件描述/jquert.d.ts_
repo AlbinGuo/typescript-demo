@@ -1,0 +1,23 @@
+// 定义全局变量
+// declare var $: (param: () => void) => void
+// 定义全局函数
+declare function $(readyFunc: () => void): void
+// 函数重载
+declare function $(selector: string): selectorInstance
+
+interface selectorInstance {
+  html: (param: string) => void
+}
+
+interface JQuery {
+  (readyFunc: () => void): void
+  (selector: string): selectorInstance
+}
+
+// declare var $: JQuery
+// 如何让对对象进行类型定义，以及对类进行类型定义，以及命名空间的嵌套
+declare namespace $ {
+  namespace fn {
+    class init {}
+  }
+}

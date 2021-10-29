@@ -1,0 +1,20 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "description": "{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}",
+  "main": "index.js",
+  "scripts": {
+    "test": "parcel ./src/index3.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/guonan01/typescript-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.6.0",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
