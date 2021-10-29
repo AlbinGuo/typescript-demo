@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.js"></script>
     <script src="./build/page.js"></script>
   </head>
   <body>
     <script>
-      new Home.Page()
+      require(['moduleImport/page'], function(page) {
+        new page.default()
+      })
     </script>
   </body>
 </html>

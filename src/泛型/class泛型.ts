@@ -1,4 +1,4 @@
-// 使用泛型之前
+// 使用 Typescript 泛型之前
 class DataManager {
   constructor(private data: string[] | number[]) {}
   getItem(index: number) {
@@ -35,7 +35,7 @@ class DataManager4<T extends string | number> {
   }
 }
 
-// 匿名函数泛型【如何使用泛型作为一个具体的类型注解】
+// 匿名函数泛型【如何使用泛型作为一个具体的类型】
 function hello<T>(param: T): T {
   return param
 }

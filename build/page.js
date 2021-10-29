@@ -1,38 +1,36 @@
-"use strict";
-var Home;
-(function (Home) {
+define("moduleImport/Components", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Footer = exports.Header = void 0;
     var Header = (function () {
         function Header() {
             var ele = document.createElement('div');
-            ele.innerText = 'this is a header text';
+            ele.innerText = '使用AMD规范引入module，Header';
             document.body.appendChild(ele);
         }
         return Header;
     }());
-    var Content = (function () {
-        function Content() {
-            var ele = document.createElement('div');
-            ele.innerText = 'this is a content text';
-            document.body.appendChild(ele);
-        }
-        return Content;
-    }());
+    exports.Header = Header;
     var Footer = (function () {
         function Footer() {
             var ele = document.createElement('div');
-            ele.innerText = 'this is a footer text';
+            ele.innerText = '===底部区域===';
             document.body.appendChild(ele);
         }
         return Footer;
     }());
-    var Pager = (function () {
-        function Pager() {
-            new Header();
-            new Content();
-            new Footer();
+    exports.Footer = Footer;
+});
+define("moduleImport/page", ["require", "exports", "moduleImport/Components"], function (require, exports, Components_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Page = (function () {
+        function Page() {
+            new Components_1.Header();
+            new Components_1.Footer();
         }
-        return Pager;
+        return Page;
     }());
-    Home.Pager = Pager;
-})(Home || (Home = {}));
+    exports.default = Page;
+});
 //# sourceMappingURL=page.js.map
